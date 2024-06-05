@@ -80,6 +80,16 @@ CREATE TABLE zawodnicy (
     CONSTRAINT zawodnicy_pk PRIMARY KEY (id_zawodnika)
 );
 
+CREATE TABLE zawodnicy_sponsorzy (
+    id_zawodnika   NUMBER NOT NULL,
+    nazwa_firmy    VARCHAR2(50) NOT NULL,
+    PRIMARY KEY (id_zawodnika, nazwa_firmy),
+    CONSTRAINT zawodnicy_sponsorzy_zawodnicy_fk FOREIGN KEY (id_zawodnika)
+        REFERENCES zawodnicy (id_zawodnika),
+    CONSTRAINT zawodnicy_sponsorzy_sponsorzy_fk FOREIGN KEY (nazwa_firmy)
+        REFERENCES sponsorzy (nazwa_firmy)
+);
+
 ALTER TABLE menadzerowie
     ADD CONSTRAINT menadzerowie_panstwa_fk FOREIGN KEY (nazwa_panstwa)
         REFERENCES panstwa (nazwa_panstwa);
