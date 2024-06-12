@@ -12,3 +12,8 @@ START WITH 1000
 INCREMENT BY 5
 CACHE 50;
 
+-- Sekwencja dla `id_pracownika` w tabeli `pracownicy`--
+CREATE SEQUENCE seq_id_pracownika
+START WITH 1
+INCREMENT BY 1;
+
