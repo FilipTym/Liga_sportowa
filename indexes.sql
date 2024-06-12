@@ -11,3 +11,11 @@ Indeks ten przyspieszy zapytania wyszukujące menadżerów na podstawie ich imie
 
 CREATE INDEX idx_menadzerowie_imie_nazwisko
 ON menadzerowie (imie, nazwisko);
+
+======================================================================================
+
+3.Indeks na kolumnie nazwisko w tabeli sedziowie
+Indeks na kolumnie `nazwisko` w tabeli `sedziowie`
+  
+CREATE INDEX idx_sedziowie_nazwisko
+ON sedziowie (nazwisko);
